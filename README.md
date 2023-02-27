@@ -7,7 +7,7 @@ This practical has two main learning aims:
 
 This practical can either be completed using a standard webcam in the Unity or by deploying to your Android tablets. Using a standard webcam will make prototyping and debugging quicker. However, using a mobile device might reveal some cool new opportunities for tangible interactions in the later tasks!
 
-> **Note** The isntructions below assume you've already done the pratical from AR week. If you need image markers, you can print them in the TFTI building. Let me know if you need scissors or selotape and I have some in my office.
+> **Note** The instructions below assume you've already done the pratical from AR week. If you need image markers, you can print them in the TFTI building. Let me know if you need scissors or selotape and I have some in my office.
 
 # Task 1: A Simple, More Tangible DJ Interface
 
