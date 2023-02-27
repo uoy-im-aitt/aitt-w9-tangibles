@@ -35,15 +35,37 @@ To complete this task you’ll need to call some code when markers are tracked a
 
 You may also need to change the ```Consider target as visible if status is``` value in the inspector to ```Tracked``` in order to make tracks stop playing when they are lost from view.
 
-Task 5: Adding Bass, Voice and Melody
+# Task 2: Adding Bass, Voice and Melody
 
 By this point you should have an interface that plays the drums part when one marker is visible. In this task, you should extend the scene so that the bass, melody and voice tracks are played when three additional markers are present in the scene.
 
-Before you start this task, you’ll need to enable the tracking of multiple markers simultaneously. This can be done by setting the “Max Simultaneous Tracked Images” property in the Vuforia Config (Window > Vuforia Config) to the max number you want to track (e.g. 4 here). 
+Before you start this task, you’ll need to enable the tracking of multiple markers simultaneously. This can be done by setting the ```Max Simultaneous Tracked Images``` property in the Vuforia Config (```Window > Vuforia Config```) to the max number you want to track (e.g. 4 here). 
 
 Here are some tips that can help you find the solution to this challenge:
 
-You can complete this task by creating new markers for each of the respective tracks and linking them to the existing DJMixer component
-To tell the mixer to play/pause a different track you can simply change the trackId parameter passed to SetTrackState method
-You shouldn’t need to create any new scripts to complete this task. Rather, you should be able to complete the task creating new instances of the script(s) created in the previous task and configuring them to behave differently using parameters.
-You’ll need to make multiple image objects with different target markers for this task. Therefore, if you only found one object to track in the previous exercise you’ll need to find more now!
+- You can complete this task by creating new markers for each of the respective tracks and linking them to the existing ```DJMixer``` component
+- To tell the mixer to play/pause a different track you can simply change the trackId parameter passed to SetTrackState method
+- You shouldn’t need to create any new scripts to complete this task. Rather, you should be able to complete the task creating new instances of the script(s) created in the previous task and configuring them to behave differently using parameters.
+- You’ll need to make multiple image objects with different target markers for this task. Therefore, if you only found one object to track in the previous exercise you’ll need to find more now!
+
+Task 3: Making it More Tangible
+
+The Unity scene you’ve created in the last task has the potential to form the basis of a number of different interfaces that make performing using STEMS more visible, like the reacTable example from the lecture. For example, it could be used to create interfaces in which:
+
+1. The user mutes STEM parts by obscuring the different markers using large, visible hand gestures
+2. The user turns on the STEM parts by placing building blocks with AR markers on them on a table
+3. A physical cube with different AR markers on each face is used to turn on/off the STEM parts
+
+In this final task, you should get creative and try and make an interface for controlling the DJMixer that makes DJing more visually interesting to an audience.
+
+What is visually interesting? Some might argue that for it relates to being able to understand what the performer is doing. However, others would argue that this doesn’t matter as long as the performer’s actions are visually interesting in some way. Have a think about what your views on this are and implement your interface accordingly. 
+
+One cool thing to experiment with when completing this task might be how you leverage the AR capabilities of Vuforia to augment the performer’s body and performance space. Imagine you’re live streaming a performance during Covid, how would you use AR to make the video stream more interesting? 
+
+# Optional Extensions
+
+If you complete all of the above tasks before the end of the practical, or would like to continue to develop your skills in your free study time, then you should consider experimenting with some of the following tasks: 
+
+- Explore whether you can go beyond just turning the different audio sources on and off when markers and tracked and lost. Could you, for example, change the volume or pitch of a source based upon the pose of a tracked marker?
+- Can you make AR visuals change based on current sound of a track (e.g. to change the size of a visual object based on how much bass frequencies are present)? This is tricky to do, but can lead to some nice effects. If you want to try this advanced task, the following method would be a good place to start: https://docs.unity3d.com/ScriptReference/AudioSource.GetSpectrumData.html. This method uses something called a Fast Fourier Transform to give you the current volume of the track in different frequency ranges (e.g. how much bass is there?).
+
