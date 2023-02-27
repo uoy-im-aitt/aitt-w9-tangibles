@@ -7,6 +7,8 @@ This practical has two main learning aims:
 
 This practical can either be completed using a standard webcam in the Unity or by deploying to your Android tablets. Using a standard webcam will make prototyping and debugging quicker. However, using a mobile device might reveal some cool new opportunities for tangible interactions in the later tasks!
 
+> **Note** The isntructions below assume you've already done the pratical from AR week. If you need image markers, you can print them in the TFTI building. Let me know if you need scissors or selotape and I have some in my office.
+
 # Task 1: A Simple, More Tangible DJ Interface
 
 Vuforia a really great platform for creating AR applications. However, you don’t have to just use it for that. Rather, it’s also possible to create tangible interfaces with it by using it by tracking the presence of physical objects with markers attached to them in a camera image. In this task, you are going to use Vuforia like this to create a (albeit simple) DJ interface that could make interaction more visible to an audience.
@@ -24,3 +26,24 @@ DJMixer mixer = // code for getting mixer component
 mixer.SetTrackState(0, true);
 ```
 
+To complete this task, write a script that uses this code to turn the drums component (id = 0) on/off when the your first marker is added/removed.
+
+To complete this task you’ll need to call some code when markers are tracked and also when they lose tracking. There are a few ways to do this, but the simplest is to use the “Default Trackable Event Handler” component that’s already on the Image game objects you’ve created. You can use this component to call your own code when a maker is tracked and lost by: 
+
+1. Create your own script that has methods that you want to be called when markers are tracked and lost and add it to an Image object
+2. Use the drop down menus found in the inspector of the ```Default Trackable Event Handler``` component to specify that the methods in your script should be called when the marker is tracked and lost respectively
+
+You may also need to change the ```Consider target as visible if status is``` value in the inspector to ```Tracked``` in order to make tracks stop playing when they are lost from view.
+
+Task 5: Adding Bass, Voice and Melody
+
+By this point you should have an interface that plays the drums part when one marker is visible. In this task, you should extend the scene so that the bass, melody and voice tracks are played when three additional markers are present in the scene.
+
+Before you start this task, you’ll need to enable the tracking of multiple markers simultaneously. This can be done by setting the “Max Simultaneous Tracked Images” property in the Vuforia Config (Window > Vuforia Config) to the max number you want to track (e.g. 4 here). 
+
+Here are some tips that can help you find the solution to this challenge:
+
+You can complete this task by creating new markers for each of the respective tracks and linking them to the existing DJMixer component
+To tell the mixer to play/pause a different track you can simply change the trackId parameter passed to SetTrackState method
+You shouldn’t need to create any new scripts to complete this task. Rather, you should be able to complete the task creating new instances of the script(s) created in the previous task and configuring them to behave differently using parameters.
+You’ll need to make multiple image objects with different target markers for this task. Therefore, if you only found one object to track in the previous exercise you’ll need to find more now!
