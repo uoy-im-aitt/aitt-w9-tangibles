@@ -1,4 +1,4 @@
-## Prototyping Tangible Interaction with AR Markers
+# Prototyping Tangible Interaction with AR Markers
 
 This practical has two main learning aims:
 
@@ -9,7 +9,7 @@ This practical can either be completed using a standard webcam in the Unity or b
 
 > **Note** The instructions below assume you've already done the pratical from AR week. If you need image markers, you can print them in the TFTI building. Let me know if you need scissors or selotape and I have some in my office.
 
-# Task 1: A Simple, More Tangible DJ Interface
+## Task 1: A Simple, More Tangible DJ Interface
 
 Vuforia a really great platform for creating AR applications. However, you don’t have to just use it for that. Rather, it’s also possible to create tangible interfaces with it by using it by tracking the presence of physical objects with markers attached to them in a camera image. In this task, you are going to use Vuforia like this to create a (albeit simple) DJ interface that could make interaction more visible to an audience.
 
@@ -35,7 +35,7 @@ To complete this task you’ll need to call some code when markers are tracked a
 
 You may also need to change the ```Consider target as visible if status is``` value in the inspector to ```Tracked``` in order to make tracks stop playing when they are lost from view.
 
-# Task 2: Adding Bass, Voice and Melody
+## Task 2: Adding Bass, Voice and Melody
 
 By this point you should have an interface that plays the drums part when one marker is visible. In this task, you should extend the scene so that the bass, melody and voice tracks are played when three additional markers are present in the scene.
 
@@ -48,7 +48,7 @@ Here are some tips that can help you find the solution to this challenge:
 - You shouldn’t need to create any new scripts to complete this task. Rather, you should be able to complete the task creating new instances of the script(s) created in the previous task and configuring them to behave differently using parameters.
 - You’ll need to make multiple image objects with different target markers for this task. Therefore, if you only found one object to track in the previous exercise you’ll need to find more now!
 
-Task 3: Making it More Tangible
+## Task 3: Making it More Tangible
 
 The Unity scene you’ve created in the last task has the potential to form the basis of a number of different interfaces that make performing using STEMS more visible, like the reacTable example from the lecture. For example, it could be used to create interfaces in which:
 
@@ -62,7 +62,7 @@ What is visually interesting? Some might argue that for it relates to being able
 
 One cool thing to experiment with when completing this task might be how you leverage the AR capabilities of Vuforia to augment the performer’s body and performance space. Imagine you’re live streaming a performance during Covid, how would you use AR to make the video stream more interesting? 
 
-# Optional Extensions
+## Optional Extensions
 
 If you complete all of the above tasks before the end of the practical, or would like to continue to develop your skills in your free study time, then you should consider experimenting with some of the following tasks: 
 
