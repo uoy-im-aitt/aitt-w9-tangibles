@@ -1,4 +1,4 @@
-# Extra Practical: Prototyping Tangible Interaction with AR Markers
+## Prototyping Tangible Interaction with AR Markers
 
 This practical has two main learning aims:
 
