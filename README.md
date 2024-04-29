@@ -7,7 +7,7 @@ This practical has two main learning aims:
 
 This practical can either be completed using a standard webcam in the Unity or by deploying to your Android tablets. Using a standard webcam will make prototyping and debugging quicker. However, using a mobile device might reveal some cool new opportunities for tangible interactions in the later tasks!
 
-> **Note** The instructions below assume you've already done the pratical from AR week. If you need image markers, you can print them in the TFTI building. Let me know if you need scissors or selotape and I have some in my office.
+> **Note** The instructions below assume you've already done the practical from AR week. If you need image markers, you can print them in this building. Let me know if you need scissors or tape and I have some in my office.
 
 ## Task 1: A Simple, More Tangible DJ Interface
 
@@ -19,19 +19,20 @@ To get started, create a copy of this git repository in your personal GitHub acc
 
 Once you’ve got the package imported, the next step is to make it control some music. I’ve provided a prefab game object called ```DJMixer``` in ```Practical Assets``` that includes a component that plays the different parts of a STEMS file. Drag this into the scene.
 
-This prefab game object includes a script called ```DJMixer.cs``` that contains a method that allows you to turn on and off the different parts of a STEMS file. This method simply turns the volume up or down on the part specified with the first integer parameter, depending on whether the second boolean parameter is true (volume all the way up) or false (volume all the way down). The code snippet below shows how to use this to turn the volume up for first part, which is the drums:
+This prefab game object includes a script called ```DJMixer.cs``` that contains methods that allows you to turn on and off the different parts of a STEMS file. These methods simply turn the volume (`PlayTrack`) up or down (`StopTrack`) on the part specified with the first integer parameter, depending on whether the second boolean parameter is true (volume all the way up) or false (volume all the way down). The code snippet below shows how to use this to turn the volume up/down for first part, which is the drums:
 
 ```c#
-DJMixer mixer = // code for getting mixer component
-mixer.SetTrackState(0, true);
+DJMixer mixer = // your code for getting mixer component (e.g. via GetComponent<DJMixer>())
+mixer.PlayTrack(0);
+mixer.StopTrack(0);
 ```
 
-To complete this task, write a script that uses this code to turn the drums component (id = 0) on/off when the your first marker is added/removed.
+To complete this task, write a script that uses this code to turn the drums component (id = 0) on/off when the first marker is added/removed.
 
 To complete this task you’ll need to call some code when markers are tracked and also when they lose tracking. There are a few ways to do this, but the simplest is to use the “Default Trackable Event Handler” component that’s already on the Image game objects you’ve created. You can use this component to call your own code when a maker is tracked and lost by: 
 
 1. Create your own script that has methods that you want to be called when markers are tracked and lost and add it to an Image object
-2. Use the drop down menus found in the inspector of the ```Default Trackable Event Handler``` component to specify that the methods in your script should be called when the marker is tracked and lost respectively
+2. Use the drop-down menus found in the inspector of the ```Default Trackable Event Handler``` component to specify that the methods in your script should be called when the marker is tracked and lost respectively
 
 You may also need to change the ```Consider target as visible if status is``` value in the inspector to ```Tracked``` in order to make tracks stop playing when they are lost from view.
 
@@ -50,17 +51,17 @@ Here are some tips that can help you find the solution to this challenge:
 
 ## Task 3: Making it More Tangible
 
-The Unity scene you’ve created in the last task has the potential to form the basis of a number of different interfaces that make performing using STEMS more visible, like the reacTable example from the lecture. For example, it could be used to create interfaces in which:
+The Unity scene you’ve created in the last task has the potential to form the basis of a number of different interfaces that make performing using STEMS more visible, like the "ReacTable" example from the lecture. For example, it could be used to create interfaces in which:
 
 1. The user mutes STEM parts by obscuring the different markers using large, visible hand gestures
 2. The user turns on the STEM parts by placing building blocks with AR markers on them on a table
 3. A physical cube with different AR markers on each face is used to turn on/off the STEM parts
 
-In this final task, you should get creative and try and make an interface for controlling the DJMixer that makes DJing more visually interesting to an audience.
+In this final task, you should get creative and try and make an interface for controlling the DJMixer that makes DJ-ing more visually interesting to an audience.
 
-What is visually interesting? Some might argue that for it relates to being able to understand what the performer is doing. However, others would argue that this doesn’t matter as long as the performer’s actions are visually interesting in some way. Have a think about what your views on this are and implement your interface accordingly. 
+What is visually interesting? Some might argue that for it relates to being able to understand what the performer is doing. However, others would argue that this does not matter as long as the performer’s actions are visually compelling in some way. Have a think about what your views on this are and implement your interface accordingly. 
 
-One cool thing to experiment with when completing this task might be how you leverage the AR capabilities of Vuforia to augment the performer’s body and performance space. Imagine you’re live streaming a performance during Covid, how would you use AR to make the video stream more interesting? 
+One cool thing to experiment with when completing this task might be how you leverage the AR capabilities of Vuforia to augment the performer’s body and performance space. Imagine you’re live-streaming a performance during Covid, how would you use AR to make the video stream more interesting? 
 
 ## Optional Extensions
 

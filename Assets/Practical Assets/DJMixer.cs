@@ -1,24 +1,33 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class DJMixer : MonoBehaviour 
 {
 	public AudioClip[] tracks;
-    public float offVolume = 0.0f;
+    public float offVolume;
     public float onVolume = 1.0f;
 
-	private AudioSource[] players;
+	private AudioSource[] _players;
 
-	void Start () 
+	private void Start () 
 	{
 		InitSources ();
 	}
 
-	public void SetTrackState(int trackId, bool playing)
+	public void PlayTrack(int trackId)
 	{
-		if (trackId >= 0 && trackId < players.Length) 
+		SetTrackState (trackId, true);
+	}
+	
+	public void StopTrack(int trackId)
+	{
+		SetTrackState (trackId, false);
+	}
+	
+	private void SetTrackState(int trackId, bool playing)
+	{
+		if (trackId >= 0 && trackId < _players.Length) 
 		{
-			players [trackId].volume = playing ? onVolume : offVolume;
+			_players [trackId].volume = playing ? onVolume : offVolume;
 		} 
 		else 
 		{
@@ -28,16 +37,16 @@ public class DJMixer : MonoBehaviour
 
 	private void InitSources()
 	{
-		players = new AudioSource[tracks.Length];
-		for (int i = 0; i < tracks.Length; i++)
+		_players = new AudioSource[tracks.Length];
+		for (var i = 0; i < tracks.Length; i++)
 		{
-			AudioSource s = this.gameObject.AddComponent<AudioSource>();
+			var s = gameObject.AddComponent<AudioSource>();
 			s.clip = tracks[i];
 			s.loop = true;
 			s.volume = offVolume;
 			s.Play();
 
-			players[i] = s;
+			_players[i] = s;
 		}
 	}
 }
