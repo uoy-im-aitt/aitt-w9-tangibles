@@ -1,6 +1,7 @@
 # Jetbrain Rider Cache
 .idea/
 Assets/Plugins/Editor/JetBrains*
+*.DotSettings
 
 # This .gitignore file should be placed at the root of your Unity project directory
 #
