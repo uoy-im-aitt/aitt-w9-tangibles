@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class DJMixer : MonoBehaviour
 {
@@ -31,7 +32,7 @@ public class DJMixer : MonoBehaviour
         }
         else
         {
-            print("Invalid track ID: " + trackId);
+            throw new IndexOutOfRangeException($"Invalid track ID {trackId}");
         }
     }
 
