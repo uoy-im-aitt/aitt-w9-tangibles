@@ -7,7 +7,8 @@ This practical has two main learning aims:
 
 This practical can either be completed using a standard webcam in the Unity or by deploying to your Android tablets. Using a standard webcam will make prototyping and debugging quicker. However, using a mobile device might reveal some cool new opportunities for tangible interactions in the later tasks!
 
-> **Note** The instructions below assume you've already done the practical from AR week. If you need image markers, you can print them in this building. Let me know if you need scissors or tape and I have some in my office.
+> **Note** The instructions below assume you've already done the practical from AR week. If you need a reminder on how to set up your Unity project to work with Vuforia, please go back and see the instructions there.
+> I've provided some image markers in ```Assets/Markers``` and you can get print outs at the front of the room. You can also use the printer in the building to make your own.
 
 ## Task 1: A Simple, More Tangible DJ Interface
 
