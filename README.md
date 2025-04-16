@@ -28,9 +28,9 @@ mixer.PlayTrack(0);
 mixer.StopTrack(0);
 ```
 
-To complete this task, write a script that uses this code to turn the drums component (id = 0) on/off when the first marker is added/removed.
+In this task, you will write a script that uses this code to turn the drums component (id = 0) on/off when the first marker is added/removed.
 
-To complete this task you’ll need to call some code when markers are tracked and also when they lose tracking. There are a few ways to do this, but the simplest is to use the “Default Trackable Event Handler” component that’s already on the Image game objects you’ve created. You can use this component to call your own code when a maker is tracked and lost by: 
+To achieve this, you’ll need to call some code when markers are tracked and also when they lose tracking. There are a few ways to do this, but the simplest is to use the “Default Trackable Event Handler” component that’s already on the Image game objects you’ve created. You can use this component to call your own code when a maker is tracked and lost by: 
 
 1. Create your own script that has methods that you want to be called when markers are tracked and lost and add it to an Image object
 2. Use the drop-down menus found in the inspector of the ```Default Observer Event Handler``` component to specify that the methods in your script should be called when the marker is tracked and lost respectively
